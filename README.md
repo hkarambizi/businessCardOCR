@@ -52,7 +52,7 @@ Response format: Email (string)
 
 #### More on Query String Formatting of Document
 
-Encode a string version of the document to be parsed using the native Javascript method encodeURI() or a similar method. This should include encoding of spaces, new lines, and special characters such as '&' and '='.
+Encode a string version of the document to be parsed using the native Javascript method encodeURI() or a similar method. This should include encoding of spaces, new lines, and the '&' character (caution: '&' may not be encoded using encodeURI() alone and if left unencoded will result in an error). 
 
 
 
