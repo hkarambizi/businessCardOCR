@@ -9,8 +9,8 @@ function getContactInfo (req, res) {
   var nameChars = '';
   var nameReg = ''
   var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/;
-  var emailReg = /(\w+)@(\w+).(\w+)/g
-  var email = doc.match(emailReg)[0] || undefined;
+  var emailReg = /(.+)@(.+).(.+)/g
+  var email = doc.match(emailReg)[0].trim() || undefined;
 
   if (email) {
     nameChars = email.toLowerCase().split('@')[0].replace(/\W/g, '');
