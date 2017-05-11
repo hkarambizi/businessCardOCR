@@ -8,7 +8,7 @@ var getContactInfo = (req, res) => {
   var nameReg = ''
   var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/;
   var emailReg = /(\w+)@(\w+).(\w+)/g
-  var email = document.match(emailReg)[0];
+  var email = document.match(emailReg)[0] || undefined;
 
   if (email) {
     nameChars = email.toLowerCase().split('@')[0].replace(/\W/g, '');
@@ -33,19 +33,19 @@ var getContactInfo = (req, res) => {
 
 var getName = (req, res) => {
   var document = req.query.doc;
-  var contactInfo = getContactInfo(document);
+  var contactInfo = getContactInfo({req: {query: {doc: document}}});
   res.send(contactInfo.Name);
 };
 
 var getPhoneNumber = (req, res) => {
   var document = req.query.doc;
-  var contactInfo = getContactInfo(document);
+  var contactInfo = getContactInfo({req: {query: {doc: document}}});
   res.send(contactInfo.Phone);
 };
 
 var getEmailAddress = (req, res) => {
   var document = req.query.doc;
-  var contactInfo = getContactInfo(document);
+  var contactInfo = getContactInfo({req: {query: {doc: document}}});
   res.send(contactInfo.Email);
 };
 
