@@ -50,9 +50,9 @@ Response format: Email (string)
 
 
 
-#### More on Query Doc Format
+#### More on Query String Formatting of Document
 
-Be sure to encode the document to be parsed using the native encodeURI() or a similar method. Spaces, new lines, and special characters (such as & and =) should be encoded.
+Encode a string version of the document to be parsed using the native Javascript method encodeURI() or a similar method. This should include encoding of spaces, new lines, and special characters such as '&' and '='.
 
 
 
