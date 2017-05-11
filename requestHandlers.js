@@ -1,4 +1,4 @@
-var contactHelper = require('./helpers.js');
+var contactHelper = require('./contactHelper.js');
 
 function getContactInfo (req, res) {
   var doc = req.query.doc;
