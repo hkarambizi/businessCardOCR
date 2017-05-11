@@ -7,8 +7,8 @@ function getContactInfo (req, res) {
   var name = undefined;
   var nameChars = '';
   var nameReg = ''
-  var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/;
-  var emailReg = /(.+)@(.+).(.+)/g
+  var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/g;
+  var emailReg = /(.+)@(.+).(.+)/g;
   var email = doc.match(emailReg)[0].trim() || undefined;
 
   if (email) {

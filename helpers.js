@@ -4,7 +4,7 @@ module.exports = (doc) => {
   var name = undefined;
   var nameChars = '';
   var nameReg = ''
-  var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/;
+  var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/g;
   var emailReg = /(\w+)@(\w+).(\w+)/g
   var email = doc.match(emailReg)[0] || undefined;
 
