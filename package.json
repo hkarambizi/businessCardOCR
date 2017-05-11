@@ -1,0 +1,14 @@
+{
+  "name": "buisiness-card-ORC",
+  "version": "1.0.0",
+  "description": "API for parsing name, phone, and email from business card information",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "author": "Laura Meg Viar",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
