@@ -34,19 +34,19 @@ var getContactInfo = (req, res) => {
 var getName = (req, res) => {
   var document = req.query.doc;
   var contactInfo = getContactInfo(document);
-  res.send('Name: ' + contactInfo.Name);
+  res.send(contactInfo.Name);
 };
 
 var getPhoneNumber = (req, res) => {
   var document = req.query.doc;
   var contactInfo = getContactInfo(document);
-  res.send('Phone: ' + contactInfo.Phone);
+  res.send(contactInfo.Phone);
 };
 
 var getEmailAddress = (req, res) => {
   var document = req.query.doc;
   var contactInfo = getContactInfo(document);
-  res.send('Email: ' + contactInfo.Email);
+  res.send(contactInfo.Email);
 };
 
 module.exports = {
