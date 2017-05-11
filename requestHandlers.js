@@ -6,7 +6,7 @@ function getContactInfo (req, res) {
   var phone = undefined;
   var name = undefined;
   var nameChars = '';
-  var nameReg = ''
+  var nameReg = '';
   var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/g;
   var emailReg = /(.+)@(.+).(.+)/g;
   var email = doc.match(emailReg)[0].trim() || undefined;
@@ -25,11 +25,15 @@ function getContactInfo (req, res) {
     }
     if (line.match(nameReg) !== null && !line.includes('@')) {
       name = line.match(nameReg)[0];
-      name = name.replace(/\b\w/g,(char) => {return char.toUpperCase();}).trim();
+      name = name.replace(/\b\w/g,(char) => char.toUpperCase()).trim();
     }
   });
 
-  res.send({Name: name, Phone: phone, Email: email});
+  res.send({
+    Name: name,
+    Phone: phone,
+    Email: email
+  });
 };
 
 function getName (req, res) {
