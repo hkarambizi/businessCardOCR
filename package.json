@@ -4,7 +4,7 @@
   "description": "API for parsing name, phone, and email from business card information",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "author": "Laura Meg Viar",
   "dependencies": {
