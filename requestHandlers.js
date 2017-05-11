@@ -1,14 +1,16 @@
-var getContactInfo = (req, res) => {
-  var document = req.query.doc;
-  console.log('doc: ', document);
-  var splitDoc = document.toLowerCase().split(/\r?\n/);
+var helper = require('./helpers.js');
+
+function getContactInfo (req, res) {
+  var doc = req.query.doc;
+  console.log('doc: ', doc);
+  var splitDoc = doc.toLowerCase().split(/\r?\n/);
   var phone = undefined;
   var name = undefined;
   var nameChars = '';
   var nameReg = ''
   var phoneReg = /(\d*)(.*\d+)(.*\d+){3}(.*\d+){4}/;
   var emailReg = /(\w+)@(\w+).(\w+)/g
-  var email = document.match(emailReg)[0] || undefined;
+  var email = doc.match(emailReg)[0] || undefined;
 
   if (email) {
     nameChars = email.toLowerCase().split('@')[0].replace(/\W/g, '');
@@ -31,21 +33,21 @@ var getContactInfo = (req, res) => {
   res.send({Name: name, Phone: phone, Email: email});
 };
 
-var getName = (req, res) => {
-  var document = req.query.doc;
-  var contactInfo = getContactInfo({req: {query: {doc: document}}});
+function getName (req, res) {
+  var doc = req.query.doc;
+  var contactInfo = helper(doc);
   res.send(contactInfo.Name);
 };
 
-var getPhoneNumber = (req, res) => {
-  var document = req.query.doc;
-  var contactInfo = getContactInfo({req: {query: {doc: document}}});
+function getPhoneNumber (req, res) {
+  var doc = req.query.doc;
+  var contactInfo = helper(doc);
   res.send(contactInfo.Phone);
 };
 
-var getEmailAddress = (req, res) => {
-  var document = req.query.doc;
-  var contactInfo = getContactInfo({req: {query: {doc: document}}});
+function getEmailAddress (req, res) {
+  var doc = req.query.doc;
+  var contactInfo = getContactInfo(doc);
   res.send(contactInfo.Email);
 };
 
