@@ -26,5 +26,9 @@ module.exports = (doc) => {
     }
   });
 
-  return {Name: name, Phone: phone, Email: email};
+  return {
+    Name: name,
+    Phone: phone,
+    Email: email
+  };
 };
