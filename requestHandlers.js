@@ -47,7 +47,7 @@ function getPhoneNumber (req, res) {
 
 function getEmailAddress (req, res) {
   var doc = req.query.doc;
-  var contactInfo = getContactInfo(doc);
+  var contactInfo = helper(doc);
   res.send(contactInfo.Email);
 };
 
