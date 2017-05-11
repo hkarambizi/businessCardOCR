@@ -2,7 +2,6 @@ var helper = require('./helpers.js');
 
 function getContactInfo (req, res) {
   var doc = req.query.doc;
-  console.log('doc: ', doc);
   var splitDoc = doc.toLowerCase().split(/\r?\n/);
   var phone = undefined;
   var name = undefined;
